@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { getPokemonJson } = require('./controllers/pokemonJsonController');
-const { getPokemonFilosofia } = require('./controllers/pokemonFilosofiaController');
-const { getBienvenida } = require('./controllers/bienvenidaController');
+const { index, getPokemonJson, getPokemonFilosofia } = require('./controllers/pokemonController');
 
-router.get('/', getBienvenida);
+router.get('/', index);
 router.get('/pokemon', getPokemonJson);
 router.get('/filosofia', getPokemonFilosofia);
 
