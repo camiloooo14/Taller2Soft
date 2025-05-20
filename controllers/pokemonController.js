@@ -1,5 +1,5 @@
-const { pokemones } = require('../database/pokemones');
-const { getRandomPokemon } = require('../utils/pokemonUtils');
+const { pokemones } = require('../database/table_pokemones');
+const { pokemonRandom } = require('../utils/pokemonRandom');
 const os = require('os');
 const fs = require('fs');
 const path = require('path');
@@ -15,7 +15,7 @@ function index(req, res) {
 }
 
 function getPokemonJson(req, res) {
-  const pokemon = getRandomPokemon();
+  const pokemon = pokemonRandom();
   res.json({
     id: pokemon.getId(),
     nombre: pokemon.getNombre(),
@@ -26,7 +26,7 @@ function getPokemonJson(req, res) {
 }
 
 function getPokemonFilosofia(req, res) {
-  const pokemon = getRandomPokemon();
+  const pokemon = pokemonRandom();
   const contenedor_id = os.hostname();
   const filePath = path.join(__dirname, '../views/filosofia.html');
 

@@ -1,10 +1,10 @@
-const { pokemones } = require('../database/pokemones');
+const { pokemones } = require('../database/table_pokemones');
 
-function getRandomPokemon() {
+function pokemonRandom() {
   const random = Math.floor(Math.random() * pokemones.length);
   return pokemones[random];
 }
 
 module.exports = {
-  getRandomPokemon
+  pokemonRandom
 }; 
