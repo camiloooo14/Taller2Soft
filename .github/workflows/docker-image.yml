@@ -21,7 +21,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASS
 
     - name: Build the Docker image
-      run: docker build pokemones -f pokemones/Dockerfile -t camiloooo14/taller2soft:latest
+      run: docker build . -t camiloooo14/taller2soft:latest
 
     - name: Docker Push
       run: docker push camiloooo14/taller2soft:latest
