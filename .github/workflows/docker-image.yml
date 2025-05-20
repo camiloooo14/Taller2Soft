@@ -7,21 +7,21 @@ on:
     branches: [ main ]
  
 jobs:
- 
   build:
- 
     runs-on: ubuntu-latest
- 
+
     steps:
     - uses: actions/checkout@v2
-    - name: docker login
+
+    - name: Docker login
       env:
-        DOCKER_USER: ${{secrets.DOCKERHUB_USER}}
-        DOCKER_PASS: ${{secrets.DOCKERHUB_PASS}}
+        DOCKER_USER: ${{ secrets.DOCKERHUB_USER }}
+        DOCKER_PASS: ${{ secrets.DOCKERHUB_PASS }}
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASS
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag camiloooo14/taller2soft:latest
-     
+      run: docker build . -t camiloooo14/taller2soft:latest
+
     - name: Docker Push
-      run: docker push camiloooo14/taller2soft
+      run: docker push camiloooo14/taller2soft:latest
