@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { index, getPokemonJson, getPokemonFilosofia } = require('./controllers/pokemonController');
+const { index, getPokemonJson, getPokemonFilosofia } = require('../controllers/pokemonController');
 
 router.get('/', index);
 router.get('/pokemon', getPokemonJson);

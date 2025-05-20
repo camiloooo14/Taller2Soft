@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const routes = require('./routes');
+const routes = require('./routes/routes');
 const PORT = 80;
 app.use('/', routes);
 
